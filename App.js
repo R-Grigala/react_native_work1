@@ -1,26 +1,33 @@
-import { Text, View, StyleSheet } from 'react-native';
+import React from 'react';
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import ProductList from './Product/ProductLlist';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        Khatia ❤️{'\n'}I love You
-      </Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#F5F5F7" />
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>პროდუქტები</Text>
+      </View>
+      <ProductList />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a', // მუქი ფონდი
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#F5F5F7',
   },
-  text: {
-    fontSize: 36,
+  header: {
+    padding: 16,
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E5EA',
+  },
+  headerTitle: {
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#f43f5e', // ვარდისფერი
-    textAlign: 'center',
+    color: '#1D1D1F',
   },
 });
